@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('xyz');
+    //return view('welcome');
 });
+
+Route::get('/abc', function () {
+    return 'This is the abc route...';
+    //return view('welcome');
+});
+
+
+
