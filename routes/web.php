@@ -1,9 +1,23 @@
 <?php
 
+/*
+ * Home
+ */
 Route::get('/', 'WelcomeController');
 
+
+/**
+ * Books
+ */
 Route::get('/books/{title}', 'BookController@show');
 Route::get('/books', 'BookController@index');
+
+
+/**
+ * Practice
+ */
+Route::any('/practice/{n?}', 'PracticeController@index');
+
 
 # Example shown at the end of Week 6's lectures
 # to discuss the kind of planning work you can do for Project 3
