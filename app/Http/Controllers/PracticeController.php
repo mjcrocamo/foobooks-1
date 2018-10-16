@@ -3,9 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use IanLChapman\PigLatinTranslator\Parser;
+
+
 
 class PracticeController extends Controller
 {
+
+    /**
+     *
+     */
+    public function practice3()
+    {
+        $translator = new Parser();
+        $translation = $translator->translate('Hello World');
+        dump($translation);
+    }
+
+    public function practice2()
+    {
+        dump(config('mail'));
+    }
+
     /**
      * Demonstrating the first practice example
      */
@@ -39,7 +58,6 @@ class PracticeController extends Controller
 
             # Load the view and pass it the array of methods
             return view('practice')->with(['methods' => $methods]);
-
         } # Otherwise, load the requested method
         else {
             $method = 'practice' . $n;
