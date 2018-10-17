@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang='en'>
 <head>
-    <title>@yield('title', 'Foobooks')</title>
+    <title>@yield('title', config('app.name'))</title>
     <meta charset='utf-8'>
 
     {{-- CSS global to every page can be loaded here --}}
