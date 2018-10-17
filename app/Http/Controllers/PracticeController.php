@@ -9,9 +9,8 @@ use IanLChapman\PigLatinTranslator\Parser;
 
 class PracticeController extends Controller
 {
-
     /**
-     *
+     * Demonstrating using an external package
      */
     public function practice3()
     {
@@ -20,9 +19,15 @@ class PracticeController extends Controller
         dump($translation);
     }
 
+    /*
+     * Demonstrating getting values from configs
+     */
     public function practice2()
     {
-        dump(config('mail'));
+        dump(config('mail.supportEmail'));
+
+        # Disabling this line to prevent accidentally revealing mail related credentials on the prod. server
+        //dump(config('mail'));
     }
 
     /**
