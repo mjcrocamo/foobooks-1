@@ -5,7 +5,6 @@
 @endsection
 
 @push('head')
-    {{-- Page specific CSS includes should be defined here; this .css file does not exist yet, but we can create it --}}
     <link href='/css/books/show.css' rel='stylesheet'>
 @endpush
 
@@ -16,3 +15,11 @@
         Details about this book will go here...
     </p>
 @endsection
+
+
+
+
+
+
+
+
