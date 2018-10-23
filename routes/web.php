@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Home
  */
@@ -9,6 +8,9 @@ Route::get('/', 'WelcomeController');
 /**
  * Books
  */
+Route::get('/books/search', 'BookController@search'); # <-- NEW 1 of 2
+Route::get('/books/search-process', 'BookController@searchProcess'); # <-- NEW 2 of 2
+
 Route::get('/books/{title}', 'BookController@show');
 Route::get('/books', 'BookController@index');
 
@@ -18,6 +20,13 @@ Route::get('/books', 'BookController@index');
  */
 Route::any('/practice/{n?}', 'PracticeController@index');
 
+
+/*
+ * Pages
+ * Simple, static pages without a lot of logic
+ */
+Route::view('/about', 'about');
+Route::view('/contact', 'contact');
 
 # Example shown at the end of Week 6's lectures
 # to discuss the kind of planning work you can do for Project 3
