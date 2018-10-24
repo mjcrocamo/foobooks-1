@@ -84,10 +84,40 @@ class BookController extends Controller
 
         # Redirect back to the search page w/ the searchTerm *and* searchResults (if any) stored in the session
         # Ref: https://laravel.com/docs/redirects#redirecting-with-flashed-session-data
-        return redirect('/books/search')->([
+        return redirect('/books/search')->with([
             'searchTerm' => $searchTerm,
             'caseSensitive' => $request->has('caseSensitive'),
             'searchResults' => $searchResults
         ]);
+    }
+
+    /**
+     * GET /books/create
+     * Display the form to add a new book
+     */
+    public function create(Request $request)
+    {
+        return view('books.create');
+    }
+
+
+    /**
+     * POST /books
+     * Process the form for adding a new book
+     */
+    public function store(Request $request)
+    {
+        # Validate the request data
+        $request->validate([
+            'title' => 'required',
+            'author' => 'required',
+            'published_year' => 'required|digits:4',
+            'cover_url' => 'required|url',
+            'purchase_url' => 'required|url'
+        ]);
+
+        # Code will eventually go here to add the book to the database,
+        # but for now we'll just dump the form data to the page for proof of concept
+        dump($request->all());
     }
 }
