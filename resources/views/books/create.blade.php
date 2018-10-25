@@ -32,7 +32,7 @@
         <input type='text' name='purchase_url' id='purchase_url' value='{{ old('purchase_url', 'http://') }}'>
         @include('modules.field-error', ['field' => 'purchase_url'])
 
-        <input type='submit' value='Add book'>
+        <input type='submit' value='Add' class='btn btn-primary'>
     </form>
 
     @if(count($errors) > 0)
